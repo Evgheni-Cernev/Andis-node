@@ -1,0 +1,439 @@
+{
+  "menu": {
+    "phoneNumbers": [
+      {
+        "id": 1,
+        "city": "Chisinau",
+        "number": "022 345 678"
+      },
+      {
+        "id": 2,
+        "city": "Balti",
+        "number": "022 345 345"
+      },
+      {
+        "id": 3,
+        "city": "Cahul",
+        "number": "022 345 345"
+      },
+      {
+        "id": 4,
+        "city": "Comrat",
+        "number": "022 345 345"
+      },
+      {
+        "id": 5,
+        "city": "Ceadar-Lunga",
+        "number": "022 345 345"
+      }
+    ],
+    "partners": [
+      {
+        "id": 1,
+        "alt": "image",
+        "imgUrl": "assets/img/brands/LaPlacinte.svg",
+        "redirectUrl": "https://laplacinte.md/",
+        "width": "86",
+        "height": "15"
+      },
+      {
+        "id": 2,
+        "alt": "image",
+        "imgUrl": "img/brands/CiaoCacao.svg",
+        "redirectUrl": "https://laplacinte.md/",
+        "width": "74",
+        "height": "27"
+      },
+      {
+        "id": 3,
+        "alt": "image",
+        "imgUrl": "img/brands/Gustland.png",
+        "redirectUrl": "https://laplacinte.md/",
+        "width": "74",
+        "height": "32"
+      }
+    ],
+    "nav": [
+      {
+        "id": 1,
+        "href": "/catalog",
+        "title": "menu",
+        "subMenu": [
+          {
+            "id": 1,
+            "title": "Pizza"
+          },
+          {
+            "id": 2,
+            "title": "Salads"
+          },
+          {
+            "id": 3,
+            "title": "Snacks"
+          },
+          {
+            "id": 4,
+            "title": "Anons Menu"
+          },
+          {
+            "id": 5,
+            "title": "Soups"
+          },
+          {
+            "id": 6,
+            "title": "Main Dishes"
+          },
+          {
+            "id": 7,
+            "title": "Box"
+          },
+          {
+            "id": 8,
+            "title": "Happy Box"
+          },
+          {
+            "id": 9,
+            "title": "Breakfast"
+          },
+          {
+            "id": 10,
+            "title": "Party menu"
+          },
+          {
+            "id": 11,
+            "title": "Lunch Box - Announcement"
+          },
+          {
+            "id": 12,
+            "title": "Andy`s Bakery"
+          },
+          {
+            "id": 13,
+            "title": "Cake"
+          },
+          {
+            "id": 14,
+            "title": "Dessert"
+          },
+          {
+            "id": 15,
+            "title": "Semi-finished products"
+          },
+          {
+            "id": 16,
+            "title": "Supplements"
+          },
+          {
+            "id": 17,
+            "title": "Beverages"
+          },
+          {
+            "id": 18,
+            "title": "Alcohol"
+          },
+          {
+            "id": 19,
+            "title": "Cutlery"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "href": "/restaurants",
+        "title": "restaurants"
+      },
+      {
+        "id": 3,
+        "href": "/news",
+        "title": "news"
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": 1,
+      "title": "Pizza",
+      "items": [
+        {
+          "id": 1,
+          "name": "Rancho",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/c16804bcd0d47fce6c6d033b694a09fe.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Neapolitana",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/c1dcb23f8376fc6ead3aeec68b59a2d0.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Greek",
+          "price": 110,
+          "urlImg": "menu/thumbs/version_220x310x1/abe848cde189206049cae70fee65b2ad.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Mario",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/1d9d15e01830693aa9d0e6b5851dd8d6.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Pepperoni",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/3a9c24985cb363b8cc326e00e39cad6e.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Salads",
+      "items": [
+        {
+          "id": 6,
+          "name": "Salmon salad",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/b11f6824a28ef9a4bbce819d0c7b1318.jpg"
+        },
+        {
+          "id": 7,
+          "name": "Greek salad",
+          "price": 70,
+          "urlImg": "menu/thumbs/version_220x310x1/1d719651a8410e475ac9c4967492f9b8.jpg"
+        },
+        {
+          "id": 8,
+          "name": "Chicken Caesar",
+          "price": 85,
+          "urlImg": "menu/thumbs/version_220x310x1/1cf5154a846879c8bea17787be5ddada.jpg"
+        },
+        {
+          "id": 9,
+          "name": "Beef salad",
+          "price": 110,
+          "urlImg": "menu/thumbs/version_220x310x1/2804b560a76a90fa37502368328884bb.jpg"
+        },
+        {
+          "id": 10,
+          "name": "Shrimp Caesar",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/2d85e909ec5d562a009880ab4e90bd8c.jpg"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "id": 1,
+      "title": "Company",
+      "list": [
+        {
+          "id": 1,
+          "title": "Career"
+        },
+        {
+          "id": 2,
+          "title": "Feedback"
+        },
+        {
+          "id": 3,
+          "title": "Contacts"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Services",
+      "list": [
+        {
+          "id": 1,
+          "title": "Client card"
+        },
+        {
+          "id": 2,
+          "title": "Corporate clients"
+        },
+        {
+          "id": 3,
+          "title": "Kids parties"
+        },
+        {
+          "id": 4,
+          "title": "Banquets"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Delivery",
+      "list": [
+        {
+          "id": 1,
+          "title": "Chișinău"
+        },
+        {
+          "id": 2,
+          "title": "Bălți"
+        },
+        {
+          "id": 3,
+          "title": "Cahul"
+        },
+        {
+          "id": 4,
+          "title": "Comrat"
+        },
+        {
+          "id": 5,
+          "title": "Ceadâr Lunga"
+        }
+      ]
+    }
+  ],
+  "sliderTop": [
+    {
+      "id": 1,
+      "imgUrl": "sliders/thumbs/version_2560x916x1/a0b148d122daa4057a7c2aa21419f90b.jpg"
+    },
+    {
+      "id": 2,
+      "imgUrl": "sliders/thumbs/version_2560x916x1/20c0739f13d8a0327d0ed09fdf43c04a.jpg"
+    },
+    {
+      "id": 3,
+      "imgUrl": "sliders/thumbs/version_2560x916x1/026bc0617f666d477ae65122d379f939.jpg"
+    }
+  ],
+  "sliderBottom": [
+    {
+      "id": 1,
+      "imgUrl": "photogallery/thumbs/version_1366x775x1/Salad12.jpg"
+    },
+    {
+      "id": 2,
+      "imgUrl": "photogallery/thumbs/version_1366x775x1/FASAD_221.jpg"
+    },
+    {
+      "id": 3,
+      "imgUrl": "photogallery/thumbs/version_1366x775x1/KIDS-21.jpg"
+    },
+    {
+      "id": 4,
+      "imgUrl": "photogallery/thumbs/version_1366x775x1/Atmosfera21.jpg"
+    },
+    {
+      "id": 5,
+      "imgUrl": "photogallery/thumbs/version_1366x775x1/TEAM_312.jpg"
+    }
+  ],
+  "previewProduct": [
+    {
+      "id": 1,
+      "name": "Rancho",
+      "description": "Weathered dough for pizza, red pizza sauce, chicken meat, mushrooms, mayonnaise, cheese, gogoshara.",
+      "quantity": 580,
+      "price": 105,
+      "imgUrl": "menu/thumbs/version_712x785x1/c16804bcd0d47fce6c6d033b694a09fe.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Neapolitana",
+      "description": "Weathered dough for pizza, red pizza sauce, chicken meat, mushrooms, mayonnaise, cheese, gogoshara.",
+      "quantity": 580,
+      "price": 105,
+      "imgUrl": "menu/thumbs/version_712x785x1/c16804bcd0d47fce6c6d033b694a09fe.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Greek",
+      "description": "Weathered dough for pizza, red pizza sauce, chicken meat, mushrooms, mayonnaise, cheese, gogoshara.",
+      "quantity": 580,
+      "price": 110,
+      "imgUrl": "menu/thumbs/version_712x785x1/c16804bcd0d47fce6c6d033b694a09fe.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Mario",
+      "description": "Weathered dough for pizza, red pizza sauce, chicken meat, mushrooms, mayonnaise, cheese, gogoshara.",
+      "quantity": 580,
+      "price": 105,
+      "imgUrl": "menu/thumbs/version_712x785x1/c16804bcd0d47fce6c6d033b694a09fe.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Pepperoni",
+      "description": "Weathered dough for pizza, red pizza sauce, chicken meat, mushrooms, mayonnaise, cheese, gogoshara.",
+      "quantity": 580,
+      "price": 105,
+      "imgUrl": "menu/thumbs/version_712x785x1/c16804bcd0d47fce6c6d033b694a09fe.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Salmon salad",
+      "description": "Salmon, vegetable oil, salad mix, baked pepper, broccoli, fresh cucumbers, dressing green.",
+      "quantity": 300,
+      "price": 105,
+      "imgUrl": "menu/thumbs/version_712x785x1/b11f6824a28ef9a4bbce819d0c7b1318.jpg"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "data": "03.05.2022",
+      "title": "Incredibly tasty and colorful - new summer menu",
+      "detail": "Update menu starting May 5th",
+      "imgUrl": "news/thumbs/version_683x383x1/InSAit_Bianca.jpg"
+    },
+    {
+      "id": 2,
+      "data": "20.04.2022",
+      "title": "We are with you on EASTER HOLIDAYS",
+      "detail": "Schedule",
+      "imgUrl": "news/thumbs/version_683x383x1/easter_pr1.jpg"
+    },
+    {
+      "id": 3,
+      "data": "21.07.2021",
+      "title": "Summer taste",
+      "detail": "From July 9, Andy’s restaurant chain launches the brightest promotion of this summer",
+      "imgUrl": "news/thumbs/version_683x383x1/IMG_6118.jpg"
+    },
+    {
+      "id": 4,
+      "data": "20.04.2022",
+      "title": "May 7 A new summer, fresh and vibrant menu starts.",
+      "detail": "New menu from 7 May",
+      "imgUrl": "news/thumbs/version_683x383x1/20210423-IMG_1071.jpg"
+    }
+  ],
+  "openNews": [
+    {
+      "id": 1,
+      "title": "Incredibly tasty and colorful - new summer menu",
+      "imgUrl": "news/thumbs/version_683x383x1/InSAit_Bianca.jpg",
+      "detail": "From May 5, an updated menu will start, which will pleasantly surprise you with a variety of dishes, each of which is a culinary masterpiece, designed to delight not only with taste, but also with a bright and original presentation! This is the perfect choice for a family breakfast, business lunch or romantic dinner with your significant other. We will be glad to see you in our restaurants."
+    },
+    {
+      "id": 2,
+      "title": "Incredibly tasty and colorful - new summer menu",
+      "imgUrl": "news/thumbs/version_683x383x1/InSAit_Bianca.jpg",
+      "detail": "From May 6, an updated menu will start, which will pleasantly surprise you with a variety of dishes, each of which is a culinary masterpiece, designed to delight not only with taste, but also with a bright and original presentation! This is the perfect choice for a family breakfast, business lunch or romantic dinner with your significant other. We will be glad to see you in our restaurants."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Andrey",
+      "email": "andrei@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "Ana Buzenco",
+      "email": "ana.buzenco.990730@gmail.com",
+      "password": "asd12",
+      "confirmPassword": "asd12",
+      "id": 3
+    }
+  ]
+}

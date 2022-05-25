@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-const dbConfig = require("./app/config/db.config");
+// const dbConfig = require("./app/config/db.config");
+const db = require("./app/models");
+const {createRolesTable, createLocationsTable} = require('./createBaseCollections');
 
 const app = express();
 
@@ -12,11 +14,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
-const Role = db.role;
-
 db.mongoose
-  .connect(`mongodb+srv://${dbConfig.HOST}:${dbConfig.DB}@cluster0.9s6s1.mongodb.net/?retryWrites=true&w=majority`, {
+  .connect(`mongodb+srv://andis2:andis2@cluster0.ftpxe.mongodb.net/?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -45,37 +44,6 @@ app.listen(PORT, () => {
 });
 
 function initial() {
-  Role.estimatedDocumentCount((err, count) => {
-    if (!err && count === 0) {
-      new Role({
-        name: "user"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
-
-        console.log("added 'user' to roles collection");
-      });
-
-      new Role({
-        name: "moderator"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
-
-        console.log("added 'moderator' to roles collection");
-      });
-
-      new Role({
-        name: "admin"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
-
-        console.log("added 'admin' to roles collection");
-      });
-    }
-  });
+  createRolesTable()
+  createLocationsTable()
 }

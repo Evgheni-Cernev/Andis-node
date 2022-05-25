@@ -1,6 +1,7 @@
 const db = require("../models");
 const ROLES = db.ROLES;
 const User = db.user;
+const Locations = db.Locations;
 
 checkDuplicateUsernameOrEmail = (req, res, next) => {
   User.findOne({
@@ -49,9 +50,26 @@ checkRolesExisted = (req, res, next) => {
   next();
 };
 
+
+checkoutLocationExisted = (req, res, next) => {
+  if (req.body.locations) {
+    for (let i = 0; i < req.body.locations.length; i++) {
+      if (!Locations.includes(req.body.roles[i])) {
+        res.status(400).send({
+          message: `Failed! Location ${req.body.locations[i]} does not exist!`
+        });
+        return;
+      }
+    }
+  }
+
+  next();
+}
+
 const verifySignUp = {
   checkDuplicateUsernameOrEmail,
-  checkRolesExisted
+  checkRolesExisted,
+  checkoutLocationExisted
 };
 
 module.exports = verifySignUp;

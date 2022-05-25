@@ -1,6 +1,6 @@
 module.exports = {
-  HOST: "evgheni-interns",
-  DB: "codefactory"
+  HOST: "andis2",
+  DB: "andis2"
 };
 
 
