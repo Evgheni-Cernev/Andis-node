@@ -8,5 +8,7 @@ db.mongoose = mongoose;
 db.user = require("./user.model");
 db.role = require("./role.model");
 db.location = require("./locations.model");
+db.nav = require('./nav.models');
+db.subNav = require('./subNav.models');
 
 module.exports = db;

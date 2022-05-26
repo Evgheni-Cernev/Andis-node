@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-// const dbConfig = require("./app/config/db.config");
 const db = require("./app/models");
-const {createRolesTable, createLocationsTable} = require('./createBaseCollections');
+const { createRolesTable, createLocationsTable, createNavTable, createAndPopulateSubNavTable } = require('./createBaseCollections');
 
 const app = express();
 
@@ -33,17 +32,17 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Andis App application." });
 });
 
-// routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 
-// set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-function initial() {
+async function initial() {
   createRolesTable()
   createLocationsTable()
+  createNavTable()
+  createAndPopulateSubNavTable()
 }
