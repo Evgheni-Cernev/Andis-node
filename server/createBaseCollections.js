@@ -1,5 +1,6 @@
 const db = require("./app/models");
 const mongoose = require("mongoose");
+const {locations} = require("./constants");
 const Role = db.role;
 const Location = db.location;
 const Nav = db.nav;
@@ -28,28 +29,7 @@ const createLocationsTable = async () => {
 
   await Location.estimatedDocumentCount(async (err, count) => {
     if (!err && count === 0) {
-      await Location.create([
-        {
-          "city": "Chisinau",
-          "phoneNumber": "022 345 678"
-        },
-        {
-          "city": "Balti",
-          "phoneNumber": "022 345 345"
-        },
-        {
-          "city": "Cahul",
-          "phoneNumber": "022 345 345"
-        },
-        {
-          "city": "Comrat",
-          "phoneNumber": "022 345 345"
-        },
-        {
-          "city": "Ceadar-Lunga",
-          "phoneNumber": "022 345 345"
-        }
-      ])
+      await Location.create(locations)
     }
   })
 }
@@ -184,29 +164,18 @@ const createAndPopulateSubNavTable = async () => {
           "title": "Cutlery"
         }
       ])
+      await db.nav.find({}, async (err, navItems) => {
+        navItems.forEach(async nav => {
+          await db.nav.findByIdAndUpdate(
+            nav._id,
+            { $push: { subMenu: (await db.subNav.find({ type: nav.title })) } },
+            { new: true, useFindAndModify: false }
+          )
+        })
+      })
     }
   });
-  (await db.nav.find({}, async (err, navItems) => {
-    //[{_id
-// :
-// 628ed8b830a1686808140f1f
-// subMenu
-// :
-// Array
-// href
-// :
-// "/catalog"
-// title
-// :
-// "menu"}]
-    navItems.forEach(async nav => {
-      console.log(JSON.stringify(await db.nav.findByIdAndUpdate(
-        nav._id,
-        { $push: { subMenu: (await db.subNav.find({ type: nav.title })) } },
-        { new: true, useFindAndModify: false }
-      ), null, 2))
-    })
-  }))
+
 }
 
 
