@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./app/models");
-const { createRolesTable, createLocationsTable, createNavTable, createAndPopulateSubNavTable } = require('./createBaseCollections');
+const { createRolesTable, createLocationsTable, createNavTable, createAndPopulateSubNavTable, createAndPopulateProductsTable } = require('./createBaseCollections');
 
 const app = express();
 
@@ -46,4 +46,5 @@ async function initial() {
   createLocationsTable()
   createNavTable()
   createAndPopulateSubNavTable()
+  createAndPopulateProductsTable()
 }

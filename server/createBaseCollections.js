@@ -5,6 +5,7 @@ const Role = db.role;
 const Location = db.location;
 const Nav = db.nav;
 const SubNav = db.subNav;
+const Product = db.product;
 
 const createRolesTable = async () => {
   await Role.estimatedDocumentCount(async (err, count) => {
@@ -179,11 +180,54 @@ const createAndPopulateSubNavTable = async () => {
 }
 
 
+const createAndPopulateProductsTable = async () => {
+  await Product.estimatedDocumentCount(async (err, count) => {
+    if (!err && count === 0) {
+      await Product.create([
+        {
+          "id": 1,
+          "name": "Rancho",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/c16804bcd0d47fce6c6d033b694a09fe.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Neapolitana",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/c1dcb23f8376fc6ead3aeec68b59a2d0.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Greek",
+          "price": 110,
+          "urlImg": "menu/thumbs/version_220x310x1/abe848cde189206049cae70fee65b2ad.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Mario",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/1d9d15e01830693aa9d0e6b5851dd8d6.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Pepperoni",
+          "price": 105,
+          "urlImg": "menu/thumbs/version_220x310x1/3a9c24985cb363b8cc326e00e39cad6e.jpg"
+        }
+      ])
+
+    }
+  });
+
+}
+
+
 module.exports = {
   createRolesTable,
   createLocationsTable,
   createNavTable,
   createAndPopulateSubNavTable,
+  createAndPopulateProductsTable
 };
 
 

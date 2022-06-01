@@ -10,5 +10,7 @@ db.role = require("./role.model");
 db.location = require("./locations.model");
 db.nav = require('./nav.models');
 db.subNav = require('./subNav.models');
+db.product = require('./product.model');
+db.box= require('./box.model');
 
 module.exports = db;

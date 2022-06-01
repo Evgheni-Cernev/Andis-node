@@ -2,6 +2,8 @@ const config = require("../config/auth.config");
 const db = require("../models");
 const User = db.user;
 const Role = db.role;
+const Product = db.product;
+const Box = db.box;
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
@@ -13,10 +15,30 @@ exports.signup = (req, res) => {
     password: bcrypt.hashSync(req.body.password, 8)
   });
 
-  user.save((err, user) => {
+  user.save(async (err, user) => {
     if (err) {
       res.status(500).send({ message: err });
       return;
+    }
+
+    if (req.body.userBox) {
+
+      const names = req.body.userBox.map(e => e)
+      const userBox = await Product.find({ '_id': { $in: req.body.userBox } });
+      if (!req.body.userBox.id) {
+        const box = new Box({
+          userId: user._id,
+          userBox: userBox.map(box => box._id)
+        });
+
+        user.userBox = box._id
+        box.save(err => {
+          if (err) {
+            res.status(500).send({ message: err });
+            return;
+          }
+        });
+      }
     }
 
     if (req.body.roles) {
@@ -67,9 +89,9 @@ exports.signin = (req, res) => {
     username: req.body.username
   })
     .populate("roles", "-__v")
+    .populate("userBox", "-__v")
     .exec((err, user) => {
-      console.log(user)
-
+      console.warn("user", user)
       if (err) {
         res.status(500).send({ message: err });
         return;
@@ -91,8 +113,15 @@ exports.signin = (req, res) => {
         });
       }
 
-      var token = jwt.sign({ id: user.id }, config.secret, {
+      var token = jwt.sign({ id: user }, config.secret, {
         expiresIn: 86400 // 24 hours
+      });
+
+      jwt.verify(token, config.secret, (err, decoded) => {
+        if (err) {
+          return res.status(401).send({ message: "Unauthorized!" });
+        }
+        req.userId = decoded.id;
       });
 
       var authorities = [];
@@ -100,12 +129,16 @@ exports.signin = (req, res) => {
       for (let i = 0; i < user.roles.length; i++) {
         authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
       }
-      res.status(200).send({
-        id: user._id,
-        username: user.username,
-        email: user.email,
-        roles: authorities,
-        accessToken: token
-      });
+
+      Box.findOne({userId: user._id}).populate("userBox", "-__v").exec((_, product) => {
+        res.status(200).send({
+          id: user._id,
+          username: user.username,
+          email: user.email,
+          roles: authorities,
+          accessToken: token,
+          userBox: product.userBox
+        });
+      })
     });
 };
